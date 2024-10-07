@@ -13,7 +13,7 @@ const ContactForm = () => {
 
   // Base API URL from environment variable
   const API_BASE_URL =
-    process.env.REACT_APP_API_BASE_URL || "http://localhost:5000"; // Fallback to localhost if not defined
+    process.env.REACT_APP_API_BASE_URL || "https://job-exchange-backend.onrender.com"; // Fallback to localhost if not defined
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
