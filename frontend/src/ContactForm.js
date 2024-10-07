@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ContactForm.css"; // Import the CSS file
 
@@ -12,8 +12,15 @@ const ContactForm = () => {
   const [responseMessage, setResponseMessage] = useState("");
 
   // Base API URL from environment variable
-  const API_BASE_URL =
-    process.env.REACT_APP_API_BASE_URL || "http://localhost:5000"; // Fallback to localhost if not defined
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+  console.log("All Environment Variables:", process.env);
+
+  //const API_BASE_URL = "http://localhost:5000"; // Hardcoded as a temporary solution
+
+  // Log the API base URL to check if it's loaded correctly
+  useEffect(() => {
+    console.log("API_BASE_URL:", API_BASE_URL); // Check the value of the env variable
+  }, [API_BASE_URL]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
