@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./ContactForm.css"; // Import the CSS file
 
+//require("dotenv").config();
+
 const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -10,10 +12,12 @@ const ContactForm = () => {
     subject: "",
   });
   const [responseMessage, setResponseMessage] = useState("");
+ 
 
   // Base API URL from environment variable
+ 
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-  console.log("All Environment Variables:", process.env);
+console.log("API_BASE_URL:", API_BASE_URL);
 
   //const API_BASE_URL = "http://localhost:5000"; // Hardcoded as a temporary solution
 
@@ -30,7 +34,7 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `${API_BASE_URL}/api/contact`, // Use dynamic API base URL
+        `${API_BASE_URL}/api/contact`,// Use dynamic API base URL
         formData
       );
       setResponseMessage(response.data.message);

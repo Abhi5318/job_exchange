@@ -3,17 +3,22 @@ import axios from "axios";
 import "./ContactList.css"; // CSS file for styling
 
 const ContactList = () => {
-  const [contacts, setContacts] = useState([]);
+  //const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
+  const [contacts, setContacts] = useState([]);
   // Get the base API URL from the environment variable
   /* const API_BASE_URL =
-    //process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
+    process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
     process.env.REACT_APP_API_BASE_URL ||
     ""; */
-  //const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-  const API_BASE_URL = "https://job-exchange-backend.onrender.com"; // Hardcoded as a temporary solution
+
+  //const API_BASE_URL = "https://http://localhost:5000"; // Hardcoded as a temporary solution
 
   // Log to ensure the correct API URL is being used
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+console.log("API_BASE_URL:", API_BASE_URL);
+
+
   console.log("API_BASE_URL:", API_BASE_URL);
 
   // Fetch contact list from the backend
@@ -30,7 +35,6 @@ const ContactList = () => {
 
     fetchContacts();
   }, [API_BASE_URL]);
-
   return (
     <div className="contact-list-container">
       <h1 className="list-title">Contact Submissions</h1>
