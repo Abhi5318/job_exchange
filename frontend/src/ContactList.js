@@ -7,7 +7,6 @@ const ContactList = () => {
 
   const [contacts, setContacts] = useState([]);
   // Get the base API URL from the environment variable
-<<<<<<< HEAD
   /* const API_BASE_URL =
     process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
     process.env.REACT_APP_API_BASE_URL ||
@@ -15,13 +14,13 @@ const ContactList = () => {
 
   //const API_BASE_URL = "https://http://localhost:5000"; // Hardcoded as a temporary solution
 
-=======
-  const API_BASE_URL ="https://job-exchange-backend.onrender.com";
+
+  //const API_BASE_URL ="https://job-exchange-backend.onrender.com";
 // process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
->>>>>>> origin/main
+
   // Log to ensure the correct API URL is being used
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-console.log("API_BASE_URL:", API_BASE_URL);
+  console.log("API_BASE_URL:", API_BASE_URL);
 
 
   console.log("API_BASE_URL:", API_BASE_URL);

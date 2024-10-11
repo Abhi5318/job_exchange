@@ -15,7 +15,7 @@ const ContactForm = () => {
  
 
   // Base API URL from environment variable
-<<<<<<< HEAD
+
  
   const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 console.log("API_BASE_URL:", API_BASE_URL);
@@ -26,9 +26,8 @@ console.log("API_BASE_URL:", API_BASE_URL);
   useEffect(() => {
     console.log("API_BASE_URL:", API_BASE_URL); // Check the value of the env variable
   }, [API_BASE_URL]);
-=======
-  const API_BASE_URL ='https://job-exchange-backend.onrender.com'; // Fallback to localhost if not defined
->>>>>>> origin/main
+
+  //const API_BASE_URL ='https://job-exchange-backend.onrender.com'; // Fallback to localhost if not defined
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
